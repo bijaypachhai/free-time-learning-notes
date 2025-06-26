@@ -1,0 +1,10 @@
+11:10:50.532916 IP 10.123.1.5.54930 > 10.123.1.4.3000: Flags [S], seq 835245246, win 64240, options [mss 1410,sackOK,TS val 969628263 ecr 0,nop,wscale 7], length 0
+11:10:50.533021 IP 10.123.1.4.3000 > 10.123.1.5.54930: Flags [S.], seq 1356576193, ack 835245247, win 65160, options [mss 1460,sackOK,TS val 3047961822 ecr 969628263,nop,wscale 7], length 0
+11:10:50.533670 IP 10.123.1.5.54930 > 10.123.1.4.3000: Flags [.], ack 1, win 502, options [nop,nop,TS val 969628265 ecr 3047961822], length 0
+11:10:50.533670 IP 10.123.1.5.54930 > 10.123.1.4.3000: Flags [P.], seq 1:80, ack 1, win 502, options [nop,nop,TS val 969628265 ecr 3047961822], length 79
+11:10:50.533718 IP 10.123.1.4.3000 > 10.123.1.5.54930: Flags [.], ack 80, win 509, options [nop,nop,TS val 3047961823 ecr 969628265], length 0
+11:10:50.535024 IP 10.123.1.4.3000 > 10.123.1.5.54930: Flags [P.], seq 1:263, ack 80, win 509, options [nop,nop,TS val 3047961824 ecr 969628265], length 262
+11:10:50.535284 IP 10.123.1.5.54930 > 10.123.1.4.3000: Flags [.], ack 263, win 501, options [nop,nop,TS val 969628267 ecr 3047961824], length 0
+11:10:50.535411 IP 10.123.1.5.54930 > 10.123.1.4.3000: Flags [F.], seq 80, ack 263, win 501, options [nop,nop,TS val 969628267 ecr 3047961824], length 0
+11:10:50.535716 IP 10.123.1.4.3000 > 10.123.1.5.54930: Flags [F.], seq 263, ack 81, win 509, options [nop,nop,TS val 3047961825 ecr 969628267], length 0
+11:10:50.536497 IP 10.123.1.5.54930 > 10.123.1.4.3000: Flags [.], ack 264, win 501, options [nop,nop,TS val 969628268 ecr 3047961825], length 0

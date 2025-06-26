@@ -1,0 +1,13 @@
+Scenario: 
+On virtual machine (vma): $ sudo iptables -A INPUT -s <vmb_ip_address> -j REJECT
+
+11:01:05.790959 IP 10.123.1.5.35716 > 10.123.1.4.3000: Flags [S], seq 156928227, win 64240, options [mss 1410,sackOK,TS val 969043522 ecr 0,nop,wscale 7], length 0
+11:01:05.791050 IP 10.123.1.4.3000 > 10.123.1.5.35716: Flags [S.], seq 572089188, ack 156928228, win 65160, options [mss 1460,sackOK,TS val 3047377080 ecr 969043522,nop,wscale 7], length 0
+11:01:05.791897 IP 10.123.1.5 > 10.123.1.4: ICMP 10.123.1.5 tcp port 35716 unreachable, length 68
+11:01:06.793266 IP 10.123.1.5.35716 > 10.123.1.4.3000: Flags [S], seq 156928227, win 64240, options [mss 1410,sackOK,TS val 969044525 ecr 0,nop,wscale 7], length 0
+11:01:06.793338 IP 10.123.1.4.3000 > 10.123.1.5.35716: Flags [S.], seq 572089188, ack 156928228, win 65160, options [mss 1460,sackOK,TS val 3047378082 ecr 969043522,nop,wscale 7], length 0
+11:01:06.794059 IP 10.123.1.5 > 10.123.1.4: ICMP 10.123.1.5 tcp port 35716 unreachable, length 68
+11:01:07.824569 IP 10.123.1.4.3000 > 10.123.1.5.35716: Flags [S.], seq 572089188, ack 156928228, win 65160, options [mss 1460,sackOK,TS val 3047379114 ecr 969043522,nop,wscale 7], length 0
+11:01:07.825882 IP 10.123.1.5 > 10.123.1.4: ICMP 10.123.1.5 tcp port 35716 unreachable, length 68
+11:01:08.809485 IP 10.123.1.5.35716 > 10.123.1.4.3000: Flags [S], seq 156928227, win 64240, options [mss 1410,sackOK,TS val 969046541 ecr 0,nop,wscale 7], length 0
+11:01:08.809559 IP 10.123.1.4.3000 > 10.123.1.5.35716: Flags [S.], seq 572089188, ack 156928228, win 65160, options [mss 1460,sackOK,TS val 3047380099 ecr 969043522,nop,wscale 7], length 0
