@@ -16,6 +16,9 @@ $ sudo tcpdump -i eth0 -c 5 icmp  ## filter based on protocol
 
 $ sudo tcpdump -i eth0 -c 5 -nn host <ANOTHER_HOST_IP_ADDRESS>
 
+## save to file capture.pcap and run in the background ( indicated by & )
+$ sudo tcpdump -i eth0 -nn -c9 port 80 -w capture.pcap &
+
 ```
 
 `tcpdump` by default resolves IP address and ports into names. But it is easier to debug issues with IP address and ports.
@@ -35,4 +38,5 @@ Limit capture to only packets related to a specific host by using the `host` fil
 | P      |  PUSH| Data Push          |
 | R      |  RST | Connection Reset   |
 | .      |  ACK | Acknowledgement    |
+| DF     |  -   | Dont Fragment      |
 
