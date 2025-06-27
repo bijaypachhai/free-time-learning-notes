@@ -1,7 +1,7 @@
 # IPTABLES
 Let's learn about magic behind linux packet filtering system.
 
-![Reference: Digital Ocean Blog](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
+[Reference: Digital Ocean Blog](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
 
 ## View Existing Rules
 ```bash
