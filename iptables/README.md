@@ -9,6 +9,11 @@ Let's learn about magic behind linux packet filtering system.
 $ sudo iptables -L
 $ sudo iptables -L --line-numbers
 
+$ sudo iptables -L INPUT
+$ sudo iptables -L -t nat
+$ sudo iptables -L -t mangle
+$ sudo iptables -L -t filter
+
 ```
 
 ## Adding Rules
@@ -61,3 +66,16 @@ $ sudo iptables-save > rules.v4
 $ sudo iptables-restore < rules.v4
 
 ```
+
+### Targets
+A target is what happens after a packet matches a rule criteria.
+
+| Target     | Description       |
+|:-----------|------------------:|
+| ACCEPT     | Allows the packets to pass through the firewall |
+| DROP       | Discards the packet without informing the sender |
+| REJECT     | Discards the packet and returns an error response to the sender |
+| LOG        | Records packet Information into a log file |
+| SNAT       | Source Network Address Translation, Alters the packet's source address |
+| DNAT       | Destination Network Address Translation, Changes the packet's destination address |
+| MASQUERADE | Alter a packet's source address for dynamically assigned IPs |
