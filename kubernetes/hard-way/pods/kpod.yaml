@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-container-pod
+spec:
+  containers:
+    - name: container-1
+      image: busybox
+      command: ['/bin/sh', '-c', 'sleep 1d']
+    - name: container-2
+      image: busybox
+      command: ['bin/sh']
+  nodeSelector:
+    kubernetes.io/hostname: node-0

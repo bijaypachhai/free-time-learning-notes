@@ -1,0 +1,86 @@
+Name:             test-container-pod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             node-0/10.1.1.4
+Start Time:       Mon, 14 Jul 2025 11:53:04 +0000
+Labels:           <none>
+Annotations:      <none>
+Status:           Running
+IP:               10.20.1.3
+IPs:
+  IP:  10.20.1.3
+Containers:
+  container-1:
+    Container ID:  containerd://990c84ffa96ddcd54731f4dbc01ea4d4d85bd590241f363a7e5d9c754f77b33f
+    Image:         busybox
+    Image ID:      docker.io/library/busybox@sha256:f85340bf132ae937d2c2a763b8335c9bab35d6e8293f70f606b9c6178d84f42b
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      /bin/sh
+      -c
+      sleep 1d
+    State:          Running
+      Started:      Mon, 14 Jul 2025 11:53:07 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-7zr5b (ro)
+  container-2:
+    Container ID:  containerd://a2c4f137541b9467d85bb1abdc5870f06c4617b3015c65004e091aab99877d95
+    Image:         busybox
+    Image ID:      docker.io/library/busybox@sha256:f85340bf132ae937d2c2a763b8335c9bab35d6e8293f70f606b9c6178d84f42b
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      bin/sh
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Mon, 14 Jul 2025 11:58:58 +0000
+      Finished:     Mon, 14 Jul 2025 11:58:58 +0000
+    Ready:          False
+    Restart Count:  6
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-7zr5b (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-7zr5b:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              kubernetes.io/hostname=node-0
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason             Age                    From               Message
+  ----     ------             ----                   ----               -------
+  Normal   Scheduled          6m26s                  default-scheduler  Successfully assigned default/test-container-pod to node-0
+  Normal   Pulling            6m25s                  kubelet            Pulling image "busybox"
+  Normal   Pulled             6m23s                  kubelet            Successfully pulled image "busybox" in 1.645s (1.645s including waiting). Image size: 2156518 bytes.
+  Normal   Created            6m23s                  kubelet            Created container: container-1
+  Normal   Started            6m23s                  kubelet            Started container container-1
+  Normal   Pulled             6m21s                  kubelet            Successfully pulled image "busybox" in 2.063s (2.063s including waiting). Image size: 2156518 bytes.
+  Normal   Pulled             6m18s                  kubelet            Successfully pulled image "busybox" in 2.105s (2.105s including waiting). Image size: 2156518 bytes.
+  Normal   Pulled             6m1s                   kubelet            Successfully pulled image "busybox" in 1.681s (1.681s including waiting). Image size: 2156518 bytes.
+  Normal   Pulled             5m34s                  kubelet            Successfully pulled image "busybox" in 1.777s (1.778s including waiting). Image size: 2156518 bytes.
+  Normal   Started            4m51s (x5 over 6m21s)  kubelet            Started container container-2
+  Normal   Created            4m51s (x5 over 6m21s)  kubelet            Created container: container-2
+  Normal   Pulled             4m51s                  kubelet            Successfully pulled image "busybox" in 1.822s (1.822s including waiting). Image size: 2156518 bytes.
+  Warning  BackOff            4m37s (x9 over 6m17s)  kubelet            Back-off restarting failed container container-2 in pod test-container-pod_default(8959e960-250d-4295-acd1-d9f64024ff44)
+  Warning  MissingClusterDNS  75s (x31 over 6m25s)   kubelet            pod: "test-container-pod_default(8959e960-250d-4295-acd1-d9f64024ff44)". kubelet does not have ClusterDNS IP configured and cannot create Pod using "ClusterFirst" policy. Falling back to "Default" policy.
+  Normal   Pulling            34s (x7 over 6m23s)    kubelet            Pulling image "busybox"
