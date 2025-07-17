@@ -24,7 +24,7 @@ gitlab_rails['smtp_authentication'] = "login"
 gitlab_rails['smtp_enable_starttls_auto'] = true
 gitlab_rails['smtp_tls'] = false
 gitlab_rails['gitlab_email_from'] = "admin@webexpertsnepal.com"
-gitlab_rails['gitlab_email+reply_to'] = "admin@webexpertsnepal.com"
+gitlab_rails['gitlab_email_reply_to'] = "admin@webexpertsnepal.com"
 
 gitlab_rails['gitlab_email_from'] = 'your-email@gmail.com'
 
@@ -35,6 +35,8 @@ gitlab_rails['gitlab_email_from'] = 'your-email@gmail.com'
 After updating the config run: `sudo gitlab-ctl reconfigure`
 
 ### Test Email Delivery
+
+> Make sure you use well known terminals while running the below command, as I ran into problem with Ghostty
 
 ```bash
 $sudo gitlab-rails console
