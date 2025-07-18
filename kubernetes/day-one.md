@@ -26,4 +26,6 @@
 
 [Pods communication across Nodes, StackOverFlow](https://stackoverflow.com/questions/58859875/kubernetes-pod-communication-across-nodes-how-does-it-work)
 
+[YouTube Channel for Kubernetes Networking](https://www.youtube.com/@TheLearningChannel-Tech)
+
 
