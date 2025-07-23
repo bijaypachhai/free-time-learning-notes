@@ -43,6 +43,8 @@ $ sudo iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW,ESTABLISHE
 
 $ sudo iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT
 
+$ sudo iptables -A INPUT -s 10.1.1.5 -j LOG --log-prefix "iptables dropped packet"
+
 
 ```
 
