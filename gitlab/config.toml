@@ -1,0 +1,13 @@
+[[runners]]
+  name = "all-repo-runner"
+  url = "http://192.168.2.50"
+  id = 5
+  token = "glrt-dDoxCnU6MSMlO5V-GnHL_Vbb2z6GX1oQ.0w0ahtv3l"
+  token_obtained_at = 2025-07-29T04:54:33Z
+  token_expires_at = 0001-01-01T00:00:00Z
+  executor = "shell"
+  [runners.cache]
+    MaxUploadedArchiveSize = 0
+    [runners.cache.s3]
+    [runners.cache.gcs]
+    [runners.cache.azure]
