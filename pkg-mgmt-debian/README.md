@@ -1,6 +1,6 @@
  # Package Management on Debian ( And Its Derivatives )
 
-> Debian packages are stored in repositories (usually websites, but can also be local files), which contain information about which versions of which packages are available. Websites can't automatically push updates to your computer so, you need to tell your package manager to pull them.
+Debian packages are stored in repositories (usually websites, but can also be local files), which contain information about which versions of which packages are available. Websites can't automatically push updates to your computer so, you need to tell your package manager to pull them.
 
 > [!important]
 > **dpkg** manages individual packages, e.g. unzipping them and running their installation instructions. Tools like **apt** get packages from repositories and tell **dpkg** to do the low-level work.
@@ -54,3 +54,33 @@ $sudo apt show postgres-contrib
 ### list
 
 > **list** is somewhat similar to **dpkg-query --list** in that it can display a list of packages satisfying certain criteria. It supports patterns for matching package names as well as options to list installed ( `--installed` ), upgradeable ( `--upgradeable` ) or all available ( `--all-versions` ) versions.
+
+
+## Finding Packages to Install
+
+|  location  |  description  |
+|------------|---------------|
+| `/var/lib/apt/list/*` | packages that can be downloaded from repositories |
+| `/var/lib/dpkg/available` | packages currently available to dpkg |
+| `/var/lib/dpkg/status` | status of installed and available packages |
+| `/var/log/dpkg.log` | recent packaging activity |
+| `/var/log/apt/term.log` | messages printed during recent runs of apt tools |
+
+>[!important]
+> **apt-mark** to toggle packages between automatically installed (removable) and manually installed (required)
+
+```bash
+$sudo apt-mark auto <package>
+$sudo apt-mark manual <package>
+
+```
+
+## Forcing removal of a package
+
+Sometimes, you might find a situation where a package cannot be fully installed, or cannot be removed due to dependency issues. This is most likely to happen when upgrading to a new distribution, because some details about your system turns out not to work with the new version.
+
+### To forcibly remove a package
+
+```bash
+$dpkg --force-all --remove <package>
+```
