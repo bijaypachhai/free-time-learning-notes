@@ -1,0 +1,47 @@
+#!/bin/bash
+
+print_usage() {
+    echo "Error: Invalid argument!"
+    echo "usage: $0 [ create <bucket_name> ]" 
+}
+
+## $# => Number of arguments provided
+if [ $# -eq 0 ]; then 
+    print_usage
+fi
+
+BUCKET_NAME=$2
+
+if [ $# -eq 3 ]; then
+    AWS_REGION=$3
+else
+    AWS_REGION="ap-northeast-2"
+fi
+
+FULL_BUCKET_NAME="$BUCKET_NAME-<AWS_ACCOUNT_NUMBER>-$AWS_REGION-an"
+
+
+if [ "$1" == "create" ]
+then
+    echo "Creating bucket for storing Terraform state file"
+    
+    aws s3api create-bucket --bucket $FULL_BUCKET_NAME  \
+        --object-lock-enabled-for-bucket \
+        --region ap-northeast-2 \
+        --bucket-namespace account-regional \
+        --create-bucket-configuration LocationConstraint=ap-northeast-2
+
+    echo "Now creating empty terraform.tfstate file in the bucket"
+    touch terraform.tfstate
+
+    aws s3 cp terraform.tfstate s3://$FULL_BUCKET_NAME --profile "default"
+
+    echo "Delete the empty state file"
+    rm terraform.tfstate
+
+    echo "S3 Bucket $FULL_BUCKET_NAME Ready for Terraform"
+    echo "Happy Terraforminggg !!!"
+
+else
+    print_usage
+fi
