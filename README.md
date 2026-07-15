@@ -5,3 +5,7 @@ This repository contains notes, docs and code snippets regarding new tools, tech
 ## Top Blogs Channel
 
 - **Games24x7 Blogs** on Medium
+
+## Considerable Dotfiles link
+
+[dotfiles](https://github.com/Helland369/dotFiles)
