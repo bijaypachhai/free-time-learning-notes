@@ -2,6 +2,8 @@
 
 ### server `index.html` for every route and path
 
+Here path rewrites donot occur. Same `index.html` file is served with routes preserved as entered.
+
 ```
 server {
         listen 80 default_server;
