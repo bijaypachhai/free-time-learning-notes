@@ -1,0 +1,6 @@
+[nginx]
+enabled = true
+port = http
+logpath = /var/log/nginx/access.log
+backend = auto
+filter = nginx-http-auth
