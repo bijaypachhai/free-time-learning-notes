@@ -14,3 +14,5 @@ sudo fail2ban-regex /var/log/nginx/access.log /etc/fail2ban/filter.d/nginx-http-
 [Linux Security Blog: What is fail2ban ?](https://linuxsecurity.com/features/what-is-fail2ban)
 
 [Hostinger Blog: Configure fail2ban](https://www.hostinger.com/tutorials/fail2ban-configuration)
+
+[Jellyfin Blog: Advanced Configuration](https://jellyfin.org/docs/general/post-install/networking/advanced/fail2ban/#advanced-fail2ban-setup-forwarding-and-managing-bans-on-an-upstream-proxy-server)
