@@ -35,3 +35,7 @@ server {
         #}
 }
 ```
+
+## References
+
+[DigitalOcean Blog: Nginx logs](https://www.digitalocean.com/community/tutorials/nginx-access-logs-error-logs)
